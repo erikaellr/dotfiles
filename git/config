@@ -18,6 +18,8 @@
     fix = commit --amend
     fixup = commit --amend --no-edit
 
+    lm = !git l $(git remote show origin | sed -n '/HEAD branch/s/.*: //p')..
+
     r = !git report
     rr = !git reportremote
     report = !ls -d -1 */ | xargs -I '{}' bash -c 'echo && echo {} && cd {} && git branch && git status --porcelain'
