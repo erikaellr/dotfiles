@@ -36,6 +36,10 @@
     lme = !git l --author=\"$(git config user.name)\"
     ldme = !git ld --author=\"$(git config user.name)\"
 
+    # switching
+    main = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
+    com = !"git checkout $(git main)"
+
     # branches
     b = branch
     bm = "!f() { git branch -m ${1}; }; f"
