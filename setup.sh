@@ -41,7 +41,9 @@ grep "\. ${DIR}/zsh/.zshrc" ~/.zshrc || echo ". ${DIR}/zsh/.zshrc" >> ~/.zshrc
 case "$OSTYPE" in
     darwin*)
         echo "doing macos-specific setup..."
-        brew install gh git git-lfs the_silver_searcher vim watch
+        brew install gh watch the_silver_searcher
+        brew tap homebrew/cask
+        brew install --cask iterm2 flux moom alt-tab balance-lock scroll-reverser sensiblesidebuttons karabiner-elements
     ;;
     linux*)
         echo "doing linux-specific setup..."
